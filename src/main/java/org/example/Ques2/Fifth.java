@@ -1,6 +1,9 @@
 package org.example.Ques2;
 
+import java.util.AbstractMap;
 import java.util.List;
+import java.util.Map;
+import java.util.Set;
 import java.util.stream.Collectors;
 
 public class Fifth {
@@ -29,10 +32,23 @@ public class Fifth {
                 p1, p2, p3
         );
 
-//        sort all person by their name, city in descending order
+        class pair{
+            String city;
+            String name;
+        }
 
-        List<String> address = List.of();
-//        personList.stream().collect(Collectors.groupingBy(Person::getAddresses, Person::getName))
+        Map<String, List<String>> map = personList.stream()
+                .flatMap(person -> person.getAddresses().stream().map(address -> new pair(){
+                    final String addr = address.getCity();
+                    final String per = person.getName();
+                })).collect(Collectors.groupingBy(
+                        obj -> obj.addr,
+                        Collectors.mapping(obj -> obj.per, Collectors.toList())
+                ));
+
+        System.out.println(map);
 
     }
 }
+
+//core (hibernate) data mvc boot

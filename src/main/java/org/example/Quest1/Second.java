@@ -21,7 +21,7 @@ public class Second {
         genderWise.get(false).forEach(employee -> System.out.println(employee.getId() + " " + employee.getName() + " " + employee.getAge() + " " + employee.getSalary() + " " + employee.getGender() + " " + employee.getDeptName()));
 
         System.out.println();
-        System.out.println("Female");
+        System.out.println("Male");
         genderWise.get(true).forEach(employee -> System.out.println(employee.getId() + " " + employee.getName() + " " + employee.getAge() + " " + employee.getSalary() + " " + employee.getGender() + " " + employee.getDeptName()));
 
     }

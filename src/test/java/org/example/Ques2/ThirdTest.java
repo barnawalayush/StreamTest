@@ -1,5 +1,6 @@
-package org.example.Quest1;
+package org.example.Ques2;
 
+import org.example.Quest1.Second;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -21,15 +22,9 @@ class ThirdTest {
     void testMain() {
         Third.main(new String[]{});
 
-        assertEquals("Antonio 40\n" +
-                "Bob 40\n" +
-                "Jessica 28\n" +
-                "Nerissa 34\n" +
-                "Sherlock 48\n" +
-                "Sherlock 48\n" +
-                "Bob 40\n" +
-                "Antonio 40\n" +
-                "Nerissa 34\n" +
-                "Jessica 28\n", outputStream.toString());
+        assertEquals("Bob\n" +
+                "John\n" +
+                "Antonio\n", outputStream.toString());
     }
+
 }
